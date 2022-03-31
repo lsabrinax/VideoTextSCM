@@ -70,7 +70,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_scm.py --save-dir path-to-save-scm-mod
 #download the pre-trained model
 cd db_model & mkdir weights
 cd weights
-Download totaltext_resnet50 in [Baidu Drive](https://pan.baidu.com/s/1vxcdpOswTK6MxJyPIJlBkA) (download code: p6u3), [Google Drive](https://drive.google.com/open?id=1T9n0HTP3X3Y_nJ0D1ekMhCQRHntORLJG).
+Download totaltext_resnet50 [Baidu Drive](https://pan.baidu.com/s/1vxcdpOswTK6MxJyPIJlBkA) (download code: p6u3), [Google Drive](https://drive.google.com/open?id=1T9n0HTP3X3Y_nJ0D1ekMhCQRHntORLJG).
 
 #train embedding
 cd VideoTextSCM
