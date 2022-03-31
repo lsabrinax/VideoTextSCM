@@ -53,7 +53,7 @@ run the below command to get the tracking results and submit the results to offi
 
 ## Training
 ### SCM
-```
+```bash
 #download the pre-trained model
 cd VideoTextSCM/scm/experiments/siammask_sharp
 wget http://www.robots.ox.ac.uk/~qwang/SiamMask_VOT.pth
@@ -66,7 +66,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_scm.py --save-dir path-to-save-scm-mod
 ```
 
 ### Embedding
-```
+```bash
 #download the pre-trained model
 cd db_model & mkdir weights
 cd weights
