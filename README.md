@@ -36,6 +36,9 @@ Part of the code is inherited from [DB](https://github.com/MhLiao/DB) and [SiamM
   git clone https://github.com/lsabrinax/VideoTextSCM
   cd VideoTextSCM/
 
+# build deformable convolution opertor
+cd assets/ops/dcn/
+python setup.py build_ext --inplace
 ```
 
 
@@ -61,7 +64,7 @@ wget http://www.robots.ox.ac.uk/~qwang/SiamMask_VOT.pth
 #train the model
 cd VideoTextSCM
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train_scm.py --save-dir path-to-save-scm-model --pretrained \
-./scm/experiments/ siammask_sharp/SiamMask_VOT.pth --config ./scm/experiments/siammask_sharp/config_icdar.json \
+./scm/experiments/siammask_sharp/SiamMask_VOT.pth --config ./scm/experiments/siammask_sharp/config_icdar.json \
 --batch 256 --epochs 20
 ```
 
