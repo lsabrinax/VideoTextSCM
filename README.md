@@ -36,9 +36,9 @@ Part of the code is inherited from [DB](https://github.com/MhLiao/DB) and [SiamM
   git clone https://github.com/lsabrinax/VideoTextSCM
   cd VideoTextSCM/
 
-# build deformable convolution opertor
-cd assets/ops/dcn/
-python setup.py build_ext --inplace
+  # build deformable convolution opertor
+  cd assets/ops/dcn/
+  python setup.py build_ext --inplace
 ```
 
 
