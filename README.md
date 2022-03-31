@@ -3,8 +3,7 @@
 # Introduction
 This is a PyToch implementation of [Video Text Tracking With a Spatio-Temporal Complementary Model](https://arxiv.org/abs/2111.04987). 
 
-Part of the code is inherited from [DB](https://github.com/MhLiao/DB).
-Part of the code is inherited from [SiamMask](https://github.com/foolwood/SiamMask).
+Part of the code is inherited from [DB](https://github.com/MhLiao/DB) and [SiamMask](https://github.com/foolwood/SiamMask).
 ## ToDo List
 
 - [x] Release code
@@ -43,7 +42,7 @@ Part of the code is inherited from [SiamMask](https://github.com/foolwood/SiamMa
 
 ## Datasets
 The root of the dataset directory can be ```VideoTextSCM/datasets/```.
-Download ICDAR 2015 Video Dataset in [official website](https://rrc.cvc.uab.es/?ch=3&com=downloads), and unzip them in dataset directory.
+Download the converted ground-truth and data list [Baidu Drive](https://pan.baidu.com/s/1-r084b6l58Rhe__1SCBo6Q)(download code: 0e8b), [Google Drive](https://drive.google.com/drive/folders/13GkcaSLsXxTCbuFwUAHvBfbB6DB-5Fwq?usp=sharing). The images of each dataset can be obtained from official website.
 
 
 ## Testing
@@ -55,22 +54,25 @@ run the below command to get the tracking results and submit the results to offi
 ## Training
 ### SCM
 ```
-# prepare datasets
-cd VideoTextSCM/scm/datasets
-python par_crop.py --enable_mask
-python gen_json.py '../../datasets/ch3_train'
-
 #download the pre-trained model
 cd VideoTextSCM/scm/experiments/siammask_sharp
 wget http://www.robots.ox.ac.uk/~qwang/SiamMask_VOT.pth
 
 #train the model
 cd VideoTextSCM
-CUDA_VISIBLE_DEVICES=0,1,2,3 python train_scm.py --save-dir path-to-save-scm-model --pretrained ./scm/experiments/siammask_sharp/SiamMask_VOT.pth --config ./scm/experiments/siammask_sharp/config_icdar.json --batch 256 --epochs 20 --clip 5
+CUDA_VISIBLE_DEVICES=0,1,2,3 python train_scm.py --save-dir path-to-save-scm-model --pretrained \
+./scm/experiments/ siammask_sharp/SiamMask_VOT.pth --config ./scm/experiments/siammask_sharp/config_icdar.json \
+--batch 256 --epochs 20
 ```
 
 ### Embedding
 ```
+#download the pre-trained model
+cd db_model & mkdir weights
+cd weights
+Download totaltext_resnet50 in [Baidu Drive](https://pan.baidu.com/s/1vxcdpOswTK6MxJyPIJlBkA) (download code: p6u3), [Google Drive](https://drive.google.com/open?id=1T9n0HTP3X3Y_nJ0D1ekMhCQRHntORLJG).
+
+
 cd VideoTextSCM
 CUDA_VISIBLE_DEVICES=0 python train_embedding.py --exp_name model-name --batch_size 3 --num_workers 8 --lr 0.0005
 ```
