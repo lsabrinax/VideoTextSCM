@@ -84,15 +84,13 @@ CUDA_VISIBLE_DEVICES=0 python train_embedding.py --exp_name model-name --batch_s
 
 Please cite the related works in your publications if it helps your research:
 
-  @article{gao2021video,
-    title={Video Text Tracking With a Spatio-Temporal Complementary Model},
-    author={Gao, Yuzhe and Li, Xing and Zhang, Jiajian and Zhou, Yu and Jin, Dian and Wang, Jing and Zhu, Shenggao and Bai, Xiang},
-    journal={IEEE Transactions on Image Processing},
-    volume={30},
-    pages={9321--9331},
-    year={2021},
-    publisher={IEEE}
-  }
-
-
+    @article{gao2021video,
+      title={Video Text Tracking With a Spatio-Temporal Complementary Model},
+      author={Gao, Yuzhe and Li, Xing and Zhang, Jiajian and Zhou, Yu and Jin, Dian and Wang, Jing and Zhu, Shenggao and Bai, Xiang},
+      journal={IEEE Transactions on Image Processing},
+      volume={30},
+      pages={9321--9331},
+      year={2021},
+      publisher={IEEE}
+    }
 
